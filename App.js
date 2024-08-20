@@ -53,14 +53,11 @@ export default function App() {
             } else if (route.name === 'My Calendar') {
               iconName = focused ? 'calendar' : 'calendar-outline';
             }
-
-            // Retorna o ícone correspondente
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarActiveTintColor: '#00BFA5',
           tabBarInactiveTintColor: '#37474F',
         })}
-        
       >
         <Tab.Screen name="Home" component={HomeStackScreen} />
         <Tab.Screen name="My Calendar" component={CalendarScreen} />

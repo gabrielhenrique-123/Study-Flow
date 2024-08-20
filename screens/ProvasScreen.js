@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, FlatList, TouchableOpacity, Modal, SafeAreaView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { insertProva, fetchProvas } from '../database';
+
 
 export default function ProvasScreen() {
   const [provas, setProvas] = useState([]);
