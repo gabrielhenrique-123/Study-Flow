@@ -34,7 +34,7 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#E5E5E5',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -44,11 +44,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   titleText: {
-    fontSize: 20,
+    color: '#37474F',
+    fontSize: 25,
     marginBottom: 20,
   },
   button: {
-    backgroundColor: 'green',
+    backgroundColor: '#00BFA5',
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 5,

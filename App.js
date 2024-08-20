@@ -2,6 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Ionicons } from '@expo/vector-icons'; // Importando Ionicons
+
 import HomeScreen from './components/HomeScreen';
 import ProvasScreen from './screens/ProvasScreen';
 import TrabalhosScreen from './screens/TrabalhosScreen';
@@ -41,7 +43,25 @@ function HomeStackScreen() {
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === 'Home') {
+              iconName = focused ? 'home' : 'home-outline';
+            } else if (route.name === 'My Calendar') {
+              iconName = focused ? 'calendar' : 'calendar-outline';
+            }
+
+            // Retorna o ícone correspondente
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: '#00BFA5',
+          tabBarInactiveTintColor: '#37474F',
+        })}
+        
+      >
         <Tab.Screen name="Home" component={HomeStackScreen} />
         <Tab.Screen name="My Calendar" component={CalendarScreen} />
       </Tab.Navigator>
