@@ -53,7 +53,7 @@ export default function ProvasScreen() {
             />
             <TextInput
               style={styles.input}
-              placeholder="Data (YYYY-MM-DD)"
+              placeholder="Data (DD-MM-YYYY)"
               value={data}
               onChangeText={setData}
             />
