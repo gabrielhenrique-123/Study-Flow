@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -9,6 +9,7 @@ import ProvasScreen from './screens/ProvasScreen';
 import TrabalhosScreen from './screens/TrabalhosScreen';
 import HorariosScreen from './screens/HorariosScreen';
 import CalendarScreen from './components/CalendarScreen';
+import { initDb } from './db/database.js';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -41,6 +42,11 @@ function HomeStackScreen() {
 }
 
 export default function App() {
+  useEffect(() => {
+    // Inicializa o banco de dados ao iniciar o aplicativo
+    initDb();
+  }, []); // Esse array vazio faz com que o useEffect rode apenas uma vez, na montagem
+  
   return (
     <NavigationContainer>
       <Tab.Navigator
